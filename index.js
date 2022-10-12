@@ -1,13 +1,18 @@
-const util = require('util');
-const fs = require('fs');
-const readfile2 = util.promisify(fs.readFile);
+const UserServiceClient = require("./client");
 
-async function main () {
-    console.log('start')
-    const file1Pr = readfile2('./test.txt') // Promise
-    const file2Pr = readfile2('./test2.txt') // Promise
-    const results = await Promise.all([file1Pr, file2Pr])
-    console.log(results.map(s => s.toString()))
-}
-main()
+const userServiceClient = new UserServiceClient();
 
+user1 = {
+  first_name: "Truo$ng",
+  last_name: "Dung",
+  email: "dung@test.com",
+  password: "Dung123",
+  password_confirmation: "Dung123",
+};
+
+const register = async (user_info) => {
+  let result = await userServiceClient.register(user_info);
+  return result;
+};
+
+register(user1).then(console.log);
