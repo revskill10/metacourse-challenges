@@ -1,25 +1,32 @@
 const express = require('express');
-const app = express();
 const PORT = 3001;
-const { validateUser } = require('./validation');
+const { joiSchema } = require('./schema');
+const { validate, ValidationError } = require('express-validation')
+
+const app = express();
 
 app.use(express.json());
 
-app.post('/api/users/register', async (req, res, next) => {	
-	try {
-		const result = await validateUser(req.body);
-		if (result.error) {
-			res.status(400).json({
-				error: result.error.details
-			})
-		}
-		res.status(200).json();
-	} catch(err) {
-		console.log(err);
-		next(err);
-	}
-})
 
+app.post('/api/users/register', validate({ body: joiSchema }, {}, {}),
+	async (req, res, next) => {
+		try {
+			res.status(200).json({ data: {} });
+		} catch (err) {
+			console.log(err);
+			next(err);
+		}
+	});
+
+//error handle middleware
+app.use(function (err, req, res, next) {
+	if (err instanceof ValidationError) {
+		return res.status(err.statusCode).json({ err });
+	}
+	return res.status(500).json({ err });
+});
+
+//app running
 app.listen(PORT, () => {
 	console.log(`App listening on port ${PORT}`);
 });
