@@ -8,13 +8,13 @@ function printEvenNumber(x) {
 function printMultiTable(x) {
     for (let i = 1; i <= 10; i++)
     {
-        let Row = '';
+        let row = '';
         for (let j = 1; j <= x; j++)
         {
             let k = i * j;
-            Row = Row + j.toString().padStart(2) + ' x ' + i.toString().padStart(2) + ' = ' + k.toString().padStart(2) + '|';
+            row = row + j.toString().padStart(2) + ' x ' + i.toString().padStart(2) + ' = ' + k.toString().padStart(2) + '|';
         }
-        console.log(Row);
+        console.log(row);
     }
 }
 

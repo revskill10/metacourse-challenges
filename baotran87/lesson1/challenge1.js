@@ -1,3 +1,5 @@
+var unitTest = require('./testUtil');
+
 function sumMultiples(x, y, z) {
     let sum = 0;
     for (let i = 0; i < z; i++)
@@ -72,3 +74,11 @@ console.log(sumEvenFibonacci(4000000));
 console.log(largestPrimeFactor(600851475143));
 console.log(largestPrimeFactor(16));
 console.log(dayOfTheWeek(13, 10, 2022));
+
+unitTest.test('timUocNguyenToLonNhat', () => {
+    expect(largestPrimeFactor(600851475143)).toBe(6857);
+})
+
+unitTest.test('tinhTongSoFibonacciChan', () => {
+    expect(sumEvenFibonacci(4000000)).toBe(4613731);
+})
