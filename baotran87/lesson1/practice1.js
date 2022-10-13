@@ -22,6 +22,29 @@ function kmToMileConverter(x) {
     return x * 0.621371192;
 }
 
+function sumInArray(A) {
+    let sum = 0;
+    for (let i = 0; i < A.length; i++)
+    {
+        sum += A[i];
+    }
+    return sum;
+}
+
+function sumInArray2D(A) {
+    let sum = 0;
+    for (let i = 0; i < A.length; i++)
+    {
+        for (let j = 0; j < A[i].length; j++)
+        {
+            sum += A[i][j];
+        }
+    }
+    return sum;
+}
+
 printEvenNumber(10);
 printMultiTable(9);
 console.log(kmToMileConverter(100));
+console.log(sumInArray([1, 5, -3, 6, 1]));
+console.log(sumInArray2D([[1,2],[3,4],[-5,-6]]));
