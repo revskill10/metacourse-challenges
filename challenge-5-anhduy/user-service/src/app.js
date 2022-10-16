@@ -8,11 +8,11 @@ const app = express();
 
 app.use(express.json());
 
-//connect to redis
-const redisClient = redisConnect();
+//connect to redis and set routes for application
+redisConnect()
+.then(redisClient => app.use(userRouter(redisClient)));
 
-// app routes
-app.use(userRouter(redisClient));
+
 
 //error handler
 app.use(errorHandler);

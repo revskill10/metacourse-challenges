@@ -1,7 +1,7 @@
 const redis = require('redis');
 const { InternalServerError } = require('../../utils/errors/custom-error');
 
-const redisConnect = () => {
+const redisConnect = async() => {
 	const client = redis.createClient();
 
 	client.on('error', function(error) {
@@ -12,6 +12,8 @@ const redisConnect = () => {
 	client.on('connect', function() {
 		console.log('Connected to redis!');
 	});
+	
+	await client.connect();
 
 	return client;
 }

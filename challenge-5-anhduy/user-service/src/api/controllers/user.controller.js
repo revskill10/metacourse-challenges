@@ -10,10 +10,38 @@ module.exports = function UserController(redisClient) {
 				result: user
 			});
 		} catch(err) {
+			console.log(err);
+			next(err);
+		}	
+	};
+	const getAllUsers = async(req, res, next) => {
+		try {			
+			const userService = new UserService(redisClient);
+			const users = await userService.getAllUsers();
+			res.status(200).json({
+				result: users
+			});
+		} catch(err) {
+			console.log(err);
+			next(err);
+		}	
+	};
+	const getUserByEmail = async(req, res, next) => {
+		try {						
+			const userService = new UserService(redisClient);
+			const email = req.params.email;
+			const user = await userService.getUserByEmail(email);
+			res.status(200).json({
+				result: user
+			});
+		} catch(err) {
+			console.log(err);
 			next(err);
 		}	
 	};
 	return {
-		registerUser
+		registerUser,
+		getAllUsers,
+		getUserByEmail
 	};
 }
