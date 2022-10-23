@@ -5,7 +5,8 @@ module.exports = function CMSController() {
 		try {	
 			const data = req.body;			
 			const validationService = new ValidationService();
-			const error = await validationService.validateUserData(data);			
+			const error = await validationService.validateUserData(data);	
+			console.log(error);
 			res.status(200).json({
 				error
 			});
