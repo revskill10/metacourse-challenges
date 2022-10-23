@@ -16,10 +16,10 @@ module.exports = function MainController() {
 				if (error) {
 					throw new BadRequestError('User data is invalid');
 				}
-				
 				//call user service to check if email exist				
 				const userClientService = new UserClientService();
-				let response = await userClientService.getUserByEmail(data.email);				
+				let response = await userClientService.getUserByEmail(data.email);
+				
 				let result = response.result;	
 				if (result) {
 					throw new BadRequestError('Email already exists !');

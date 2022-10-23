@@ -9,7 +9,6 @@ module.exports = function userRouter(redisClient) {
 	router.post('/api/register', userController.registerUser);
 	router.get('/api/users/:email', userController.getUserByEmail);
 	router.get('/api/users', userController.getAllUsers);
-	
 
 	return router;
 }
