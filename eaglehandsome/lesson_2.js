@@ -18,7 +18,7 @@ function sum_array(n) {
 }
 
 
-//sum_array(range(1,15));
+sum_array(range(1,15));
 
 // range with 3 argument
 
@@ -37,15 +37,16 @@ function range_3arg (start,end,step){
 
 //range_3arg(1,12,2);
 //range_3arg(12,3,-1);
-
-   let b = 0;
-    let A = [1,2,4,5,6];
+function reverArray(A){
+    
     let Rev_array = [];
-    for (let i = 0 ; i <= A.length; i++){b = A[A.length -i];Rev_array.push(b); }
+    for (let i = 1 ; i <= A.length; i++){Rev_array.push( A[A.length -i]); }
     console.log(Rev_array);
+}
 
 
-//reverArray(range(1,10));
+reverArray(range_3arg(1,10,2));
+
 
 
 
