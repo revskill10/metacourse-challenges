@@ -9,9 +9,9 @@ function range (start,end){
 }
 
 function sum_array(n) {
-    
+
     let j = 0;
-  
+
         for(let i = 0; i < n.length; i++) {  j = j + n[i];
        }console.log(j);
     return j;
@@ -25,7 +25,7 @@ sum_array(range(1,15));
 function range_3arg (start,end,step){
     let array = [start];
     let a = start;      
-  
+
    if(step >= 0){ 
         for (let i = 1; i < (end - start); i+=step){ a = a + step; array.push(a); }
         console.log(array);}
@@ -38,7 +38,7 @@ function range_3arg (start,end,step){
 //range_3arg(1,12,2);
 //range_3arg(12,3,-1);
 function reverArray(A){
-    
+
     let Rev_array = [];
     for (let i = 1 ; i <= A.length; i++){Rev_array.push( A[A.length -i]); }
     console.log(Rev_array);
@@ -46,11 +46,4 @@ function reverArray(A){
 
 
 reverArray(range_3arg(1,10,2));
-
-
-
-
-
-
-
 
