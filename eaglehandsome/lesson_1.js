@@ -18,7 +18,7 @@ function multiplication_table(n){
     for (let j = 1; j < n; j ++){
         for (let i = 1; i < n ; i++){
             k = j + 'x' + i + '=' + j * i ;       
-            m = m + ' ' + k;
+            m = m + ' ' + k + '\t';
          } console.log(m);
          m = '';
         }
@@ -43,7 +43,7 @@ function convert_km_mile (n){
     return n * 0.6214 ;
     
 }
-console.log (convert_km_mile(1000));
+//console.log (convert_km_mile(1000));
 // Sum of Even Fibonacci numbers less than values 4 mil
 let n1 = 0;
 let n2 = 1;
@@ -59,4 +59,94 @@ for  (let i = 1; i < 4000000 ; i++) {
 console.log(sum_even_fibo);
 
 // Largest prime factor
+function largestPrimeFactor(x) {
+    let z = x;
+    for (let i = 2; i <= x / 2; i++){
+        if (x % i === 0){
+            z = i;
+            return largestPrimeFactor(x / i);
+        }
+    }
+    return z;
+}
+console.log(largestPrimeFactor(6787));
 
+
+
+function timeTable(n){
+    let array =[];
+    let row_array = [];
+   
+    let k = 0;
+    for ( let i = 1; i <= n ; i++){
+        for (let j = 1; j <= n; j++){
+            k = i*j;
+            row_array.push(k);
+           
+        }  array.push(row_array);
+        row_array = [];
+        
+    } return array;
+}
+
+
+function print(array){
+      
+    for (let element of array){
+        console.log(element.map(function (array, index){
+            return " " + array.toString().padStart(3);
+        }).join(" ").concat("\n"));
+    }
+   
+    
+}
+
+print(timeTable(4));
+
+// sort an array from  lowest to highest
+let newArray =[];
+function removeElementofArray(array, index) {
+    return array.slice(0, index)    
+      .concat(array.slice(index + 1));
+}
+
+function sortArray(array){
+    let minValue = array[0];
+    let minValue_index = 0;
+    for (let i = 0; i < array.length ; i++){
+       if (array[i] < minValue){
+        minValue = array[i] ;
+        minValue_index = i;
+       }
+    }      
+    let updateArray = removeElementofArray(array, minValue_index);
+    newArray.push(minValue);
+    if (!updateArray.length ){
+        return newArray;
+    } 
+    sortArray (updateArray) ; 
+    return newArray;
+}
+
+//console.log(sortArray([10,5,8,2,4,6]));
+
+// remove negative number from array and sort from lowest to highest
+let currentArray =[];
+
+function removeNegativeNumber(array){
+    for (let i = 0; i < array.length ; i++){
+        if (array[i] < 0){
+           currentArray = removeElementofArray(array, i);
+           if (!currentArray.length ){
+               return currentArray;
+            }
+            removeNegativeNumber(currentArray);
+        } 
+        
+     }  return currentArray;        
+}
+console.log(removeNegativeNumber(sortArray([5,-4,-3,8,1,2])));
+
+
+
+ 

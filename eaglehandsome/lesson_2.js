@@ -47,3 +47,25 @@ function reverArray(A){
 
 reverArray(range_3arg(1,10,2));
 
+// arrayTOlist
+
+function arrayToList(array){
+    let list = null;
+    for (let i = array.length - 1; i >=0; i--) {
+        list = {value: array[i], rest:list};
+    } 
+    return  list;
+}
+function listToArray(list){
+    let array = [];
+    for (; list !== null; list = list.rest){
+        array.push(list.value);
+    }
+        
+    
+    return array;
+   
+}
+
+console.log(arrayToList([10,20,30,40]));
+console.log(listToArray(arrayToList([10,20,30,40])));
