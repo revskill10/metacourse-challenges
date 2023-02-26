@@ -1,5 +1,7 @@
-const{tong3so}=require('./code.js')
+const{tong3so, insochan, bangcuutruong}=require('./code.js')
 
 // import { tong3so  } from './code.js';
 
-tong3so()
+tong3so();
+insochan();
+bangcuutruong();
