@@ -1,0 +1,6 @@
+user_registered, 23-10-2022, {"first_name":"anh duy","last_name":"nguyen tran","email":"anhduydp1231@gmail.com","password":"anhduydp","password_confirmation":"anhduydp"}
+user_registered, 23-10-2022, {"first_name":"anh duy","last_name":"nguyen tran","email":"anhduydp1261@gmail.com","password":"anhduydp","password_confirmation":"anhduydp"}
+user_registered, 23-10-2022, {"first_name":"anh duy","last_name":"nguyen tran","email":"anhduydp1264@gmail.com","password":"anhduydp","password_confirmation":"anhduydp"}
+user_registered, 23-10-2022, {"first_name":"anh duy","last_name":"nguyen tran","email":"anhduydp1262@gmail.com","password":"anhduydp","password_confirmation":"anhduydp"}
+user_registered, 23-10-2022, {"first_name":"anh duy","last_name":"nguyen tran","email":"anhduydp1263@gmail.com","password":"anhduydp","password_confirmation":"anhduydp"}
+user_registered, 23-10-2022, {"first_name":"anh duy","last_name":"nguyen tran","email":"anhduydp1265@gmail.com","password":"anhduydp","password_confirmation":"anhduydp"}
