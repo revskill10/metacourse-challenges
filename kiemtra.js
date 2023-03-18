@@ -7,7 +7,7 @@ app.post('/api/users/register', (req, res) => {
   console.log(req.body)
   const { error } = validateUser(req.body);
   if (error) {
-    res.json({ result: "lỗi"})
+    res.json({ result: error.details[0].message})
     return res.status(400).send(error.details[0].message);
   }
   // Nếu hợp lệ, tiếp tục xử lý
