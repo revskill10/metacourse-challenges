@@ -6,7 +6,6 @@ const port = 3000
 app.use(express.json());
 
 app.post('/api/register', async (req, res) => {
-  console.log(req.body);
   const mathServiceClient = new MathServiceClient();
   const result = await mathServiceClient.sum({
     first_name: req.body.first_name,
